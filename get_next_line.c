@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 23:26:29 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/26 19:40:40 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/26 20:04:01 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,19 @@ static int	return_value(int read_i, char **appended, char **line)
 
 	if (read_i < 0)
 		return (-1);
-	else if (*appended && (n_pos = check_newline(*appended)) >= 0)
+	if (*appended && (n_pos = check_newline(*appended)) >= 0)
 	{
 		assign_next_line(appended, line, n_pos);
 		return (1);
 	}
-	else
+	else if (*appended)
 	{
 		*line = *appended;
 		*appended = 0;
 		return (0);
 	}
+	*line = ft_strdup("");
+	return (0);
 }
 
 int			get_next_line(int fd, char **line)
