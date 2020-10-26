@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 23:26:35 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/26 19:48:10 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/26 21:25:18 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strdup(const char *str)
 	return (re);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*re;
 	size_t	s1_len;
@@ -69,6 +69,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!(re = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1))))
 		return (NULL);
 	ft_strlcpy(re, s1, s1_len + 1);
+	free(s1);
 	ft_strlcpy(re + s1_len, s2, s2_len + 1);
 	return (re);
 }

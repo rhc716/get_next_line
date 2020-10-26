@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 23:21:26 by hroh              #+#    #+#             */
-/*   Updated: 2020/10/26 19:40:33 by hroh             ###   ########.fr       */
+/*   Updated: 2020/10/26 21:24:54 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int		get_next_line(int fd, char **line);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 char	*ft_strdup(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 
 #endif
